@@ -1,5 +1,7 @@
 import pygame
 
+# get the speed in both ways with circle --> x+y only <= 3 
+# like wheel for movement in mobile games
 
 def draw_car():
     pygame.draw.rect(screen, (0, 0, 255), (car_x, car_y, 50, 50))
