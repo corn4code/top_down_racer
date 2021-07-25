@@ -4,17 +4,15 @@ import pygame
 # like wheel for movement in mobile games
 
 def draw_car():
-    pygame.draw.rect(screen, (0, 0, 255), (car_x, car_y, 50, 50))
+    pygame.draw.rect(screen, (0, 0, 255), (car_x, car_y, 90, 50))
+
+def draw_rotation_car():
+    
+    pass
 
 
-acceleration_x = 0
-speed_x = 0 + acceleration_x
-acceleration_y = 0
-speed_y = 0 + acceleration_y
 car_x = 50
 car_y = 40
-car_movement_x = speed_x + car_x
-car_movement_y = speed_y + car_y
 window_width = 1920
 window_height = 1030
 size = [window_width, window_height]
@@ -29,6 +27,7 @@ while running:
     if keys[pygame.K_UP] and keys[pygame.K_RIGHT]:
         car_x += 1.5
         car_y -= 1.5
+        draw_rotation_car()
     elif keys[pygame.K_UP] and keys[pygame.K_LEFT]:
         car_x -= 1.5
         car_y -= 1.5
@@ -47,10 +46,16 @@ while running:
     elif keys[pygame.K_LEFT]:
         car_x -= 3
     # end movement of car
-
+    
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_DELETE:
+                running = False
+
+
         
 
     screen.blit(bg_surface, (0, 0))
