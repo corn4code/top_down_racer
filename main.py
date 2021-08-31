@@ -4,7 +4,7 @@ import pygame
 # like wheel for movement in mobile games
 
 def draw_car():
-    pygame.draw.rect(screen, (0, 0, 255), (car_x, car_y, 50, 50))
+    # pygame.draw.rect(screen, (0, 0, 255), (car_x, car_y, 50, 50))
     rect = car.get_rect()
     rect.topleft = (car_x, car_y)
     screen.blit(car, rect)
