@@ -14,8 +14,8 @@ def draw_rotation_car():
     pass
 
 
-car_x = 50
-car_y = 40
+car_x = 900
+car_y = 560
 window_width = 1920
 window_height = 1030
 size = [window_width, window_height]
@@ -60,6 +60,8 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_DELETE:
                 running = False
+            if event.key == pygame.K_SPACE:
+                print(f"car x: {car_x} car y: {car_y}")
 
 
         
