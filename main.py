@@ -1,4 +1,5 @@
 import pygame
+import time
 
 # get the speed in both ways with circle --> x+y only <= 3 
 # like wheel for movement in mobile games
@@ -29,6 +30,7 @@ car_image = pygame.transform.rotozoom(pygame.image.load("car-white.png"), 0, 0.1
 running = True
 new_car_image = car_image
 rotation_angle = 0
+lap_started = False
 
 while running:
 
@@ -61,10 +63,12 @@ while running:
     elif keys[pygame.K_RIGHT]:
         car_x += 2.5
         if rotation_angle != 0:
-            if rotation_angle > -0.1:
+            if rotation_angle > -0.3:
                 rotation_angle -= 0.3
-            if rotation_angle < 0.1:
+            elif rotation_angle < 0.3:
                  rotation_angle += 0.3
+            elif rotation_angle != 0:
+                rotation_angle = 0
     elif keys[pygame.K_LEFT]:
         car_x -= 2.5
         
